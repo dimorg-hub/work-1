@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="../css/style.css")
+		title Document
+	body 
+		.wrapper
+			.container 
+				- let h1title = 'Buy Our Safe & Secure VPN';
+				h1.wrapper__title #{h1title} 
+				- let step = 'step 1';
+				span.wrapper__step #{step}
+				- let choosePlan = 'Choose Your Plan';
+				span.wrapper__plan #{choosePlan}
+				.content 
+					ul.content__list 
+						-
+							let prise = [
+								{
+									time:	'moutli',
+									currency: '$',
+									prise: '6.95',
+									month: '/mo',
+									oldPrise: '',
+									newPrise: 'Includes all VPN features.',
+									savePrise: ''
+								},
+															{
+									time:	'Two Years',
+									currency: '$',
+									prise: '2.91',
+									month: '/mo',
+									oldPrise: '$166.80',
+									newPrise: '$69.95 per two years',
+									savePrise: 'Save 58%*'
+								},
+															{
+									time:	'Yearly',
+									currency: '$',
+									prise: '3.30',
+									month: '/mo',
+									oldPrise: '$83.40',
+									newPrise: '$39.95 per year',
+									savePrise: 'Save 52%*'
+								},
+							];
+						mixin card(data) 
+							li.content__item 
+								span.content__title= data.time
+								.content__prises 
+									span.content__prises--currency= data.currency
+									span.content__prises--prise= data.prise
+									span.content__prises--month= data.month
+								.content__prise
+									span.content__prise--old= data.oldPrise
+									span.content__prise--new= data.newPrise
+									span.content__prise--save= data.savePrise
+								button.content__item--button select plan 
+						each dataPrise in prise
+							+card(dataPrise)
+							
