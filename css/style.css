@@ -98,19 +98,19 @@ ul {
 }
 
 .wrapper {
-  background-color: #F7F7F7;
-  padding: 154px 0;
   font-family: 'Roboto', sans-serif;
+  padding: 154px 0;
   text-align: center;
   font-weight: 400;
-  color: #22252E;
   line-height: 1;
+  color: #22252E;
+  background-color: #F7F7F7;
 }
 
 .wrapper__title {
   font-size: 3.5rem;
-  margin-bottom: 3.9375rem;
   font-weight: 300;
+  margin-bottom: 3.9375rem;
 }
 
 @media (max-width: 440px) {
@@ -123,16 +123,16 @@ ul {
 .wrapper__step {
   display: block;
   font-size: 0.875rem;
-  text-transform: uppercase;
   line-height: 1.0625;
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
   color: #4CB649;
+  margin-bottom: 0.5rem;
 }
 
 .wrapper__plan {
   display: block;
-  font-weight: 300;
   font-size: 2rem;
+  font-weight: 300;
   margin-bottom: 4.625rem;
 }
 
@@ -166,13 +166,7 @@ ul {
 }
 
 .content__item {
-  background-color: #fff;
-  width: 380px;
-  min-height: 340px;
-  padding: 49px 20px 40px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  border: 4px solid transparent;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,11 +180,18 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 380px;
+  min-height: 340px;
+  padding: 49px 20px 40px;
+  border: 4px solid transparent;
+  background-color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 @media (max-width: 650px) {
   .content__item {
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -223,11 +224,11 @@ ul {
 }
 
 .content__title {
-  text-transform: uppercase;
-  font-size: 1.1428rem;
-  margin-bottom: 1.5rem;
   position: relative;
   display: block;
+  font-size: 1.1428rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 .content__title::after {
@@ -243,10 +244,10 @@ ul {
 }
 
 .content__prises {
+  position: relative;
+  max-width: 13.25rem;
   font-size: 3.5rem;
   margin-bottom: 2.9375rem;
-  max-width: 13.25rem;
-  position: relative;
 }
 
 .content__prises::after {
@@ -254,20 +255,20 @@ ul {
   position: absolute;
   bottom: -16px;
   right: 0px;
-  background-color: #EBECED;
   height: 1px;
   width: 100%;
+  background-color: #EBECED;
 }
 
-.content__prises__prises--currency {
-  font-size: 24px;
+.content__prises .content__prises--currency {
   vertical-align: super;
+  font-size: 24px;
   font-weight: 300;
 }
 
-.content__prises__prises--month {
-  font-size: 24px;
+.content__prises .content__prises--month {
   vertical-align: baseline;
+  font-size: 24px;
   font-weight: 300;
 }
 
@@ -287,21 +288,21 @@ ul {
 }
 
 .content__item--button {
-  background-color: transparent;
+  position: relative;
+  min-width: 205px;
+  padding: 12px 10px;
   font-size: 1.1428rem;
+  text-align: center;
   text-transform: uppercase;
-  color: #4CB649;
   border: 1px solid #4CB649;
   border-radius: 20px;
-  padding: 12px 10px;
-  text-align: center;
-  min-width: 205px;
+  color: #4CB649;
+  background-color: transparent;
+  margin-top: auto;
+  overflow: hidden;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   cursor: pointer;
-  margin-top: auto;
-  position: relative;
-  overflow: hidden;
 }
 
 .content__item--button::after {
@@ -311,9 +312,9 @@ ul {
   left: 0px;
   bottom: 0px;
   right: 0px;
-  background-color: #FF8D00;
-  text-align: center;
   vertical-align: auto;
+  text-align: center;
+  background-color: #FF8D00;
   -webkit-transition: top 0.2s;
   transition: top 0.2s;
 }

@@ -97,43 +97,44 @@ ul {
 }
 
 .wrapper {
-	background-color: #F7F7F7;
-	padding: 154px 0;
 	font-family: 'Roboto', sans-serif;
+	padding: 154px 0;
 	text-align: center;
 	font-weight: 400;
-	color: #22252E;
 	line-height: 1;
 
-	&__title {
-		font-size: 3.5rem;
-		margin-bottom: 3.9375rem;
-		font-weight: 300;
+	color: #22252E;
+	background-color: #F7F7F7;
+}
 
-		@media (max-width:440px) {
-			font-size: 2rem;
-			margin-bottom: 2rem;
-		}
-	}
+.wrapper__title {
+	font-size: 3.5rem;
+	font-weight: 300;
+	margin-bottom: 3.9375rem;
 
-	&__step {
-		display: block;
-		font-size: 0.875rem;
-		text-transform: uppercase;
-		line-height: 1.0625;
-		margin-bottom: 0.5rem;
-		color: #4CB649;
-	}
-
-	&__plan {
-		display: block;
-		font-weight: 300;
+	@media (max-width:440px) {
 		font-size: 2rem;
-		margin-bottom: 4.625rem;
+		margin-bottom: 2rem;
+	}
+}
 
-		@media (max-width:440px) {
-			font-size: 1.5rem;
-		}
+.wrapper__step {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.0625;
+	text-transform: uppercase;
+	color: #4CB649;
+	margin-bottom: 0.5rem;
+}
+
+.wrapper__plan {
+	display: block;
+	font-size: 2rem;
+	font-weight: 300;
+	margin-bottom: 4.625rem;
+
+	@media (max-width:440px) {
+		font-size: 1.5rem;
 	}
 }
 
@@ -143,158 +144,155 @@ ul {
 	padding: 0px 10px;
 }
 
-.content {
+.content__list {
+	display: flex;
+	list-style: none;
+	justify-content: center;
 
-	&__list {
-		display: flex;
-		list-style: none;
-		justify-content: center;
+	@media (max-width:1024px) {
+		flex-wrap: wrap;
+	}
+}
 
+.content__item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 380px;
+	min-height: 340px;
+	padding: 49px 20px 40px;
+	border: 4px solid transparent;
+	background-color: #fff;
+	transition: all 0.2s;
+
+	@media (max-width:650px) {
+		width: 80%;
+	}
+
+	&:not(:last-child) {
+		margin-right: 30px;
 
 		@media (max-width:1024px) {
-			flex-wrap: wrap;
+			margin-bottom: 30px;
+		}
+
+		@media (max-width:960px) {
+			margin-right: 0px;
 		}
 	}
 
-	&__item {
-		background-color: #fff;
-		width: 380px;
-		min-height: 340px;
-		padding: 49px 20px 40px;
-		transition: all 0.2s;
-		border: 4px solid transparent;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-		@media (max-width:650px) {
-			width: 100%;
-		}
-
-		&:not(:last-child) {
-			margin-right: 30px;
-
-			@media (max-width:1024px) {
-				margin-bottom: 30px;
-			}
-
-			@media (max-width:960px) {
-				margin-right: 0px;
-			}
-		}
-
-		&:hover {
-			border: 4px solid #FF8D00;
-			transform: scale(1.1);
-		}
-
-		&:hover .content__item--button {
-			background-color: #FF8D00;
-			color: #fff;
-			border: 1px solid transparent;
-		}
+	&:hover {
+		border: 4px solid #FF8D00;
+		transform: scale(1.1);
 	}
 
-	&__title {
-		text-transform: uppercase;
-		font-size: 1.1428rem;
-		margin-bottom: 1.5rem;
-		position: relative;
-		display: block;
+	&:hover .content__item--button {
+		background-color: #FF8D00;
+		color: #fff;
+		border: 1px solid transparent;
+	}
+}
 
-		&::after {
-			content: '';
-			position: absolute;
-			left: 50%;
-			bottom: -12px;
-			width: 24px;
-			height: 2px;
-			background-color: #4CB649;
-			transform: translate(-50%);
-		}
+.content__title {
+	position: relative;
+	display: block;
+	font-size: 1.1428rem;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: -12px;
+		width: 24px;
+		height: 2px;
+		background-color: #4CB649;
+		transform: translate(-50%);
+	}
+}
+
+.content__prises {
+	position: relative;
+	max-width: 13.25rem;
+	font-size: 3.5rem;
+	margin-bottom: 2.9375rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -16px;
+		right: 0px;
+		height: 1px;
+		width: 100%;
+		background-color: #EBECED;
 	}
 
-	&__prises {
-		font-size: 3.5rem;
-		margin-bottom: 2.9375rem;
-		max-width: 13.25rem;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: -16px;
-			right: 0px;
-			background-color: #EBECED;
-			height: 1px;
-			width: 100%;
-		}
-
-		&__prises--currency {
-			font-size: 24px;
-			vertical-align: super;
-			font-weight: 300;
-		}
-
-		&__prises--month {
-			font-size: 24px;
-			vertical-align: baseline;
-			font-weight: 300;
-		}
+	.content__prises--currency {
+		vertical-align: super;
+		font-size: 24px;
+		font-weight: 300;
 	}
 
-	&__prise {
-		font-size: 1.1428rem;
-		margin-bottom: 2rem;
+	.content__prises--month {
+		vertical-align: baseline;
+		font-size: 24px;
+		font-weight: 300;
 	}
+}
+
+.content__prise {
+	font-size: 1.1428rem;
+	margin-bottom: 2rem;
+}
 
 
-	&__prise--old {
-		margin-right: 8px;
-		color: #F24458;
-	}
+.content__prise--old {
+	margin-right: 8px;
+	color: #F24458;
+}
 
-	&__prise--save {
-		display: block;
-		margin-top: 8px;
-	}
+.content__prise--save {
+	display: block;
+	margin-top: 8px;
+}
 
-	&__item--button {
-		background-color: transparent;
-		font-size: 1.1428rem;
-		text-transform: uppercase;
-		color: #4CB649;
-		border: 1px solid #4CB649;
-		border-radius: 20px;
-		padding: 12px 10px;
+.content__item--button {
+	position: relative;
+	min-width: 205px;
+	padding: 12px 10px;
+	font-size: 1.1428rem;
+	text-align: center;
+	text-transform: uppercase;
+	border: 1px solid #4CB649;
+	border-radius: 20px;
+	color: #4CB649;
+	background-color: transparent;
+	margin-top: auto;
+	overflow: hidden;
+	transition: all 0.2s;
+	cursor: pointer;
+
+	&::after {
+		content: 'PLAN SELECTED';
+		position: absolute;
+		top: 50px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		vertical-align: auto;
 		text-align: center;
-		min-width: 205px;
-		transition: all 0.2s;
-		cursor: pointer;
-		margin-top: auto;
-		position: relative;
-		overflow: hidden;
+		background-color: #FF8D00;
+		transition: top 0.2s;
+	}
 
-		&::after {
-			content: 'PLAN SELECTED';
-			position: absolute;
-			top: 50px;
-			left: 0px;
-			bottom: 0px;
-			right: 0px;
-			background-color: #FF8D00;
-			text-align: center;
-			vertical-align: auto;
-			transition: top 0.2s;
-		}
+	&:active::after {
+		top: 11px;
+	}
 
-		&:active::after {
-			top: 11px;
-		}
-
-		&:active {
-			color: transparent;
-		}
+	&:active {
+		color: transparent;
 	}
 }
