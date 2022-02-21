@@ -1,3 +1,4 @@
+include prise_date
 include mixin
 
 doctype html
@@ -10,12 +11,12 @@ html(lang=langHtml)
 		title #{titleHead}
 	body 
 
-		.wrapper
+		section.plan
 			.container 
-				h1(class='wrapper__title') #{h1title} 
-				span.wrapper__step #{step}
-				span(class=contentClass) #{choosePlan}
-				.content(class='content__inner')
-					ul.content__list 
+				h1.plan__title #{h1title} 
+				span.plan__descr #{step}
+				span.plan__subtitle #{choosePlan}
+				.plan__inner
+					.plan__list 
 						each dataPrise in prise
 							+card(dataPrise)
